@@ -103,30 +103,64 @@
 
     // 5. Проверка на палиндром
 
-    function checkPalindrome() {
-        let numb;
+    // function checkPalindrome() {
+    //     let numb;
 
-        do {
-            do {
-                numb = prompt("Enter a number of 5 digit");
-            } while (numb.length < 5)
-        } while(isNaN(numb))
+    //     do {
+    //         do {
+    //             numb = prompt("Enter a number of 5 digit");
+    //         } while (numb.length < 5)
+    //     } while(isNaN(numb))
 
-        for (let i = 0; i < numb.length / 2; i++) {
-            if (numb[i] == numb[numb.length - i - 1]) {
-                continue;
-            } else {
-                return alert(`Your number is not a palindrome`);
-            }
-        }
-        alert(`Your number is a palindrome, congratolation!`)
-    }
+    //     for (let i = 0; i < numb.length / 2; i++) {
+    //         if (numb[i] == numb[numb.length - i - 1]) {
+    //             continue;
+    //         } else {
+    //             return alert(`Your number is not a palindrome`);
+    //         }
+    //     }
+    //     alert(`Your number is a palindrome, congratolation!`)
+    // }
 
-    do {
-        checkPalindrome();
-    } while (confirm("Do you whant to continue?"))
+    // do {
+    //     checkPalindrome();
+    // } while (confirm("Do you whant to continue?"))
 
-    // 6. 
+    // 6. Конвертер валют
+
+    // const COURS_USD_EUR = 0.93,
+    //       COURS_USD_UAH = 26.88,
+    //       COURS_USD_AZN = 1.7;
+
+    // let form = document.querySelector('#converterForm'),
+    //     inputValue = document.querySelector('#formInput'),
+    //     listOfCurrency = document.querySelector('#listOfCurrency'),
+    //     outputFild = document.querySelector('#formOutput');
+
+    // form.addEventListener('submit', (e) => {
+    //     e.preventDefault();
+    // });
+
+    // // console.log(listOfCurrency[1]);
+
+    // inputValue.addEventListener('input', clculate);
+    // listOfCurrency.addEventListener('change', clculate);
+
+    // function clculate() {
+    //     switch (listOfCurrency.value) {
+    //         case 'eur':
+    //             outputFild.value = `${inputValue.value * COURS_USD_EUR} EUR`;
+    //         break;
+    //         case 'uah':
+    //             outputFild.value = `${inputValue.value * COURS_USD_UAH} UAH`;
+    //         break;
+    //         case 'azn':
+    //             outputFild.value = `${inputValue.value * COURS_USD_AZN} AZN`;
+    //         break;
+    //     }
+    // }
+
+    // 7. 
 
     
 
