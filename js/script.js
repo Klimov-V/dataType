@@ -72,19 +72,47 @@
     // 3. Совпадение цифр в числе
 
     do {
-        let numb = null;            
+        let numb;
 
         do {
             do {
-                numb = prompt("Enter a digit fom 0 to 9");      // дополнительная проверка, на случай если ничего не введёт
+                numb = prompt("Enter a number of 3 digit");
             } while (numb.length < 3)
+        } while(isNaN(numb))                                // я не ограничиваю пользователя 3-мя символами, можно сделать обрезку numb = Number(numb.slice(0, 3));
 
-            numb = Number(numb.slice(0, 3));
-            console.log(numb);
-        } while(isNaN(numb))
-
-    
-
+        for (let i = 0; i < numb.length - 1; i++) {
+            if (numb[i] == numb[i - 1]) continue;
+            
+            let n = 0,
+                t = 0;
+            
+            for (let j = i + 1; j < numb.length; j++) {
+                if (numb[i] == numb[j]) {
+                    t++;
+                    n = numb[i];
+                }
+            }
+            
+            if (t) {
+                alert(`Число ${n} повторяется ${++t} раз`);
+            }
+        }
     } while (confirm("Do you whant to continue?"))
+
+    // 4. Делали на занятии
+
+    // 5. Проверка на палиндром
+
+    // do {
+    //     let numb;
+
+    //     do {
+    //         do {
+    //             numb = prompt("Enter a number of 5 digit");
+    //         } while (numb.length < 3)
+    //     } while(isNaN(numb))
+
+        
+    // } while (confirm("Do you whant to continue?"))
 
 })();
