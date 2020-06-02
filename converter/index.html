@@ -13,10 +13,11 @@
 <body>
 
     <div class="container">
+        <h2>Конвертер валют</h2>
         <form id="converterForm">
             <div class="form-group">
-                <label for="usersMoney">Enter the value in USD</label>
-                <input type="text" class="form-control" id="formInput">
+                <label for="converterMoney">Enter the value in USD</label>
+                <input type="number" class="form-control" id="converterInput">
             </div>
             <div class="form-group">
                 <label for="listOfCurrency">Select a currency</label>
@@ -27,8 +28,23 @@
                 </select>
             </div>
             <div class="form-group output">
-                <label for="listOfCurrency">Result</label>
-                <input class="form-control" type="text" id="formOutput">
+                <label for="converterOutput">Result</label>
+                <input class="form-control" type="text" id="converterOutput" readonly>
+            </div>
+        </form>
+
+        <hr>
+
+        <h2>Подсчёт стоимости с учётом скидки</h2>
+        <form id="purchaseForm">
+            <div class="form-group">
+                <label for="purchaseInput">Введите сумму покупки</label>
+                <input type="text" class="form-control" id="purchaseInput">
+            </div>
+            
+            <div class="form-group output">
+                <label for="purchaseOutput">Результат</label>
+                <input class="form-control" type="text" id="purchaseOutput" readonly>
             </div>
         </form>
     </div>

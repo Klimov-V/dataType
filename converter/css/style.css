@@ -1,7 +1,14 @@
 .output {
     margin-top: 100px;
 }
-#converterForm {
+form {
     width: 300px;
-    margin: 100px auto 0;
+    margin: 0 auto;
+}
+body {
+    padding-top: 50px;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
 }
