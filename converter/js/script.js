@@ -15,6 +15,7 @@
         e.preventDefault();
     });
 
+    document.addEventListener("DOMContentLoaded", convert)
     converterInput.addEventListener('input', convert);
     listOfCurrency.addEventListener('change', convert);
 
@@ -24,17 +25,41 @@
 
         switch (listOfCurrency.value) {
             case 'eur':
-                converterOutput.value = `${(converterInput.value * COURS_USD_EUR).toFixed(2)} EUR`;
+                let eur = getRate('eur');
+                console.log(eur);
+
+                converterOutput.value = `${(converterInput.value * eur).toFixed(2)} EUR`;
+
             break;
-            case 'uah':
-                converterOutput.value = `${(converterInput.value * COURS_USD_UAH).toFixed(2)} UAH`;
+            case 'usd':
+                let usd = getRate('usd');
+                console.log(usd);
+
+                converterOutput.value = `${(converterInput.value * usd).toFixed(2)} UAH`;
+
             break;
             case 'azn':
-                converterOutput.value = `${(converterInput.value * COURS_USD_AZN).toFixed(2)} AZN`;
+                let azn = getRate('azn');
+                // console.log(getRate('azn'));
+                
+                console.log(azn);
+                
+                converterOutput.value = `${(converterInput.value * azn).toFixed(2)} AZN`;
+
             break;
         }
     }
-    
+
+    function getRate(currency) {
+        fetch(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=${currency}&json`)
+            .then(response => response.json())
+            .then( response => {
+                console.log(response[0].rate);
+                
+                return response[0].rate;
+            })
+    }
+
     function checkNumber(inputValue) {
         do {
             converterInput.value = '';
